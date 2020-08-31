@@ -23,8 +23,7 @@ Then answer the following questions:
     - let không thể khai báo lại biến giống var
         + let age = 15;
           let age = 18; ==> sai
-    - khi khai báo biến với var nếu không gán giá trị thì biến sẽ được khởi tạo với giá trị là undefined,
-    còn với let nếu không gán giá trị sẽ xảy ra lỗi
+    
 3. Điểm khác biệt giữa let và const : const cố định giá trị của biến ==> không thể thay đổi giá trị của biến
 4. Dùng const trong trường hợp ta muốn cố định giá trị của một biến nào đó,
  dùng let trong trường hợp ta có thể cần phải thay đổi giá trị của biến đó còn var thì không nên dùng vì nếu dùng 
@@ -60,47 +59,47 @@ for(let i = 0;i < 7;i++) {
 }
 /*
 b.	n numbers, starting from 0, n entered by user*/
-let n = prompt('Enter a number')
-for(let i = 0;i < n;i++) {
+let num = prompt('Enter a number')
+for(let i = 0;i < num;i++) {
     console.log(i);
 }
 /*
 c.	A sequence of numbers, starting from 3, ending before n, n entered by user*/
-let n = prompt('Enter a number')
-for(i = 3;i < n;i++) {
+let endNumber = prompt('Enter a number')
+for(i = 3;i < endNumber;i++) {
     console.log(i);
 }
 /*
 d.	A sequence of numbers, starting from c, ending before n, c and n entered by user 
-let c = prompt('Enter c');
-let n = prompt('Enter n');
-for(let i = c ;i < n;c++) {
-    console.log(c);
+let startNumber = prompt('Enter c');
+let endNumber = prompt('Enter n');
+for(let i = startNumber; i < endNumber; i++) {
+    console.log(strartNumber);
 }
 */
 
 /*
 e.	A sequence of numbers, starting from c, ending before n, stepping by 3, c and n entered by user 
-let c = prompt('Enter c');
-let n = prompt('Enter n');
-for(let i = c; i < n; c + 3) {
-    console.log(c);
+let startNumber = prompt('Enter c');
+let endNumber = prompt('Enter n');
+for(let i = startNumber; i < endNumber; i + 3) {
+    console.log(startNumber);
 }
 */
 
 /*
 f.	A sequence of numbers, starting from c, ending before n, stepping by s. c, n and  s entered by user
-let c = prompt('Enter c');
-let n = prompt('Enter n');
-let s = prompt('Enter s');
-for(let i = c; i < n; i + s) {
+let startNumber = prompt('Enter c');
+let endNumber = prompt('Enter n');
+let stepNumber = prompt('Enter s');
+for(let i = startNumber; i < endNumber; i + stepNumber) {
     console.log(i);
 }
 */
 
 /*
 4.	Write a program to calculate the factorial of n: (1 * 2 * 3 *... *n), n enter by user
-let n = prompt('Enter n');
+let num = prompt('Enter n');
 let factorial = 1;
 for(let i = 1; i <= n; i++) {
     factorial *= i;
@@ -118,25 +117,25 @@ if(age < 14){
 /*
 6.	Write a program asking user to enter a number, x, then check if x is in the lower half or higher half of 0 - 9 range
 */
-let x = prompt('Enter a number');
-if(x < 9/2) {
+let num = prompt('Enter a number');
+if(num < 9/2) {
     alert('Lower half of 9')
 } else alert('Higher half of 9')
 /*
 7.	Write a program asking user to enter two numbers, x and n, then check if x is in lower half or higher half of n
-let n = prompt('n = ')
-let x = prompt('x = ');
-if(x < n/2) {
-    alert(x + ' is in lower half of ' + n)
-} else alert(x + ' is in higher half of ' + n)
+let num1 = prompt('n = ')
+let num2 = prompt('x = ');
+if(num2 < num1/2) {
+    alert(num2 + ' is in lower half of ' + num1)
+} else alert(num2 + ' is in higher half of ' + num1)
 */
 
 /*
 8.	Write a script to check if a number is even (divisible by 2) or odd number
-let n = prompt('Enter a number');
-if( n % 2 === 0){
-    alert(n + ' is an even number')
-} alert(n + ' is an odd number')
+let num = prompt('Enter a number');
+if( num % 2 === 0){
+    alert(num + ' is an even number')
+} alert(num + ' is an odd number')
 */
 
 /*
@@ -151,9 +150,9 @@ if( n % 2 === 0){
 
     b.	n L’s and H’s in total, n entered by user
 
-    let n = prompt('Enter a number');
+    let num = prompt('Enter a number');
     for(let i = 0; i < n; i++) {
-        if( i < n/2 +1) {
+        if( i < num/2 +1) {
             console.log(L)
         } else console.log(H)
     }
@@ -168,8 +167,8 @@ if( n % 2 === 0){
 
     d.	n 1’s and 0’s in total, consecutively, n entered by user
 
-    let n = prompt('Enter a number');
-    for(let i = 0; i < n; i++) {
+    let num = prompt('Enter a number');
+    for(let i = 0; i < num; i++) {
         if(i % 2 === 0) {
             console.log('1')
         } else console.log('0')
@@ -245,8 +244,9 @@ for(let i = 0; i < 6; i++) {
 
 12.	Use JS Turtle to draw a polygon, the number of polygon’s edges entered by user
 
-let n = prompt('Enter number of edges')
-for(let i =0; i < n; i++) {
+let num = prompt('Enter number of edges');
+
+for(let i = 0; i < n; i++) {
     fd(50);
     rt(360/n)
 }
@@ -255,8 +255,19 @@ for(let i =0; i < n; i++) {
 
 /*
 13.	(Optional) Use JS Turtle to draw n polygons, n entered by users
+let num = prompt("Enter a number of polygons ");
+for(let j =0; j< n; j++) {
+    for(let i = 0; i < n ; i++){
+        fd(50);
+        rt(360/n);
+    }
+}
 */
 
+/* 
+So sánh template string và string : 
+trong tempalte string có thể chèn thêm biểu thức bằng cách chèn vào trong ${ }.
+*/
  
 
 
