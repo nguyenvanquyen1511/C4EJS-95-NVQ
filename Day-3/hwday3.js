@@ -89,31 +89,35 @@ console.log(...a);
 //4.	Write a script to simulate a clothes shop, asking and performing certain tasks from users
 
 let items = [' Jeans ', ' T-Shirt ', ' Socks ']
-let text = prompt('Hi there, welcome to shop admin panel, what do you want (C, R, U, D)?').toUpperCase();
+let select = prompt('Hi there, welcome to shop admin panel, what do you want (C, R, U, D)?').toUpperCase();
  
-    if (text === 'c')  {
+    if (select === 'c')  {
         const newItem = prompt('Enter the name of the new item');
         alert(`Done`);
         items.push(newItem);
         
     }
-    else if (text === 'r'){
+    else if (select === 'r'){
         console.log(`The current items are :`)
         for(let i = 0; i< items.length; i++) {
             console.log(`${i + 1}. ${items[i]}`)
         }
     }
-    else if (text === 'u') {
-        const updateItem = Number(prompt('Enter the position you want to update'));
+    else if (select === 'u') {
+        const indexUpdateItem = Number(prompt('Enter the position you want to update'));
+        if (updateItem <= items.length) {
         const newNameItem = prompt('Enter the new name');
-        items[updateItem - 1] = newNameItem;
+        items[indexUpdateItem - 1] = newNameItem;
         alert(`Done`);
+        } else alert(`Index not exist`);
         
     }
-    else if (text === 'd') {
-        const deleteItem = Number(prompt('Enter the position you want to delete'));
-        items.splice(deleteItem -1, 1);
+    else if (select === 'd') {
+        const indexDeleteItem = Number(prompt('Enter the position you want to delete'));
+        if (indexDeleteItem <= items.length) {
+        items.splice(indexDeleteItem -1, 1);
         alert(`Done`);
+        } else alert(`Index not exist`);
         
     }
     else  alert(`This command is not supported`);
