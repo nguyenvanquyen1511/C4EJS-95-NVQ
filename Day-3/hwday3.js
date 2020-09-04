@@ -3,7 +3,7 @@
 */
 // const numberOfEdeges = prompt("Enter the number of edges:");
 
-// for (let i = 1; i <= numberOfEdeges; i++) {
+// for (let i = 1; i <= Number(numberOfEdeges); i++) {
 //   fd(50);
 //   rt(180 - (180 * (numberOfEdeges - 2)) / numberOfEdeges);
 // }
@@ -89,21 +89,21 @@ console.log(...a);
 //4.	Write a script to simulate a clothes shop, asking and performing certain tasks from users
 
 let items = [' Jeans ', ' T-Shirt ', ' Socks ']
-let select = prompt('Hi there, welcome to shop admin panel, what do you want (C, R, U, D)?').toUpperCase();
+let userOption = prompt('Hi there, welcome to shop admin panel, what do you want (C, R, U, D)?').toUpperCase();
  
-    if (select === 'c')  {
+    if (userOption === 'c')  {
         const newItem = prompt('Enter the name of the new item');
         alert(`Done`);
         items.push(newItem);
         
     }
-    else if (select === 'r'){
+    else if (userOption === 'r'){
         console.log(`The current items are :`)
         for(let i = 0; i< items.length; i++) {
             console.log(`${i + 1}. ${items[i]}`)
         }
     }
-    else if (select === 'u') {
+    else if (userOption === 'u') {
         const indexUpdateItem = Number(prompt('Enter the position you want to update'));
         if (updateItem <= items.length) {
         const newNameItem = prompt('Enter the new name');
@@ -112,7 +112,7 @@ let select = prompt('Hi there, welcome to shop admin panel, what do you want (C,
         } else alert(`Index not exist`);
         
     }
-    else if (select === 'd') {
+    else if (userOption === 'd') {
         const indexDeleteItem = Number(prompt('Enter the position you want to delete'));
         if (indexDeleteItem <= items.length) {
         items.splice(indexDeleteItem -1, 1);
@@ -138,7 +138,7 @@ alert(`The sum of them is ${sum}`);
 const sequenceOfNumbers = prompt('Enter a sequence of number, separate by commas (,)');
 let arrOfNumber = sequenceOfNumbers.split(",");
 let min = Number(arrOfNumber[0]);
-for (let i = 0; i < arrOfNumber.length - 1; i++) {
+for (let i = 0; i < arrOfNumber.length; i++) {
     if ( Number(arrOfNumber[i]) > Number(arrOfNumber[i + 1])) {
         min = arrOfNumber[i + 1];
     }
@@ -287,7 +287,7 @@ let arrNum = sequenceNum.split(",");
 // Cách 1 : tạo mảng rỗng , kiểm tra các phần tử trong mảng cho trước nếu thỏa mãn => thêm vào mảng rỗng
 let sequenceOddNum = [];
 for (let i = 0; i < arrNum.length; i++) {
-    if (arrNum[i] % 2 == 0) {
+    if (arrNum[i] % 2 !== 0) {
         sequenceOddNum.push(arrNum[i])
     }
 }
@@ -297,8 +297,10 @@ for (let i = 0; i < arrNum.length; i++) {
 let sequenceOddNum = arrNum.filter(x  => x % 2 !== 0);
 */
 
-if (!sequenceOddNum) {
-    alert(`Odd number not exist `)
-} else alert(`${sequenceNum} => ${[...sequenceOddNum]}`);
+if (!sequenceOddNum === 0) {
+    alert(`${sequenceNum} => ${[...sequenceOddNum]}`);
+} else  alert(`Odd number not exist `);
+
+
 
 
