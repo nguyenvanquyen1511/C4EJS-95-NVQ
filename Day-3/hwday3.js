@@ -269,7 +269,7 @@ for (let i = 0; i < arrayNames.length; i++){
 
 
 
-/* cách 2 : dùng Array.filter()
+/* cách 2 : dùng Array.map()
 let stringNames = arrayNames.map(x => "<" + x + ">");
 */
 
