@@ -221,7 +221,7 @@ now calculate the total size of your sheep and then the expected money you can g
 Write a program to calculate the total size of your sheep as well as the money you would have. Expected console output:*/
 
 let totalSize = 0;
-for( let i = 0; i < sizeOfSheeps.length; i++) {
+for (let i = 0; i < sizeOfSheeps.length; i++) {
     totalSize += sizeOfSheeps[i];
 }
 console.log(`My flock has size in total: ${totalSize}`);
@@ -257,14 +257,14 @@ each surrounded with <>. If you need hints, find them at the end of this homewor
 
 
 
-const sequenceOfNames = prompt('Enter a sequence of names ');
+const sequenceOfNames = prompt('Enter a sequence of names, separate by commas (,) ');
 let arrayNames = sequenceOfNames.split(",");
 
 //Cách 1 : tạo mảng rỗng, biến đổi phần tử trong mảng cho trước rồi thêm vào mảng rỗng
 let stringNames = [];
-for( let i = 0; i < arrayNames.length; i++){
-    arrayNames[i] = `<${arrayNames[i]}>`;
-    stringNames.push(arrayNames[i]);
+for (let i = 0; i < arrayNames.length; i++){
+    stringNames[i] = `<${arrayNames[i]}>`;
+    
 }
 
 
@@ -281,7 +281,7 @@ alert(`${sequenceOfNames} => ${stringNames}`);
 Numbers of the entered sequence. If you need hints, they are at the end of this homework
 */
 
-const sequenceNum = prompt('Enter a sequence of number ');
+const sequenceNum = prompt('Enter a sequence of number, separate  by commas (,) ');
 let arrNum = sequenceNum.split(",");
 
 // Cách 1 : tạo mảng rỗng , kiểm tra các phần tử trong mảng cho trước nếu thỏa mãn => thêm vào mảng rỗng
@@ -296,7 +296,8 @@ for (let i = 0; i < arrNum.length; i++) {
 /* Cách 2 : dùng Array.filter()
 let sequenceOddNum = arrNum.filter(x  => x % 2 !== 0);
 */
-if (sequenceOddNum.length <= 0) {
+
+if (!sequenceOddNum) {
     alert(`Odd number not exist `)
 } else alert(`${sequenceNum} => ${[...sequenceOddNum]}`);
 
