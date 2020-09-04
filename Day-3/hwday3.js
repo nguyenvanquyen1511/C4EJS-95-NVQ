@@ -105,7 +105,7 @@ let userOption = prompt('Hi there, welcome to shop admin panel, what do you want
     }
     else if (userOption === 'u') {
         const indexUpdateItem = Number(prompt('Enter the position you want to update'));
-        if (updateItem <= items.length) {
+        if (updateItem < items.length) {
         const newNameItem = prompt('Enter the new name');
         items[indexUpdateItem - 1] = newNameItem;
         alert(`Done`);
@@ -114,7 +114,7 @@ let userOption = prompt('Hi there, welcome to shop admin panel, what do you want
     }
     else if (userOption === 'd') {
         const indexDeleteItem = Number(prompt('Enter the position you want to delete'));
-        if (indexDeleteItem <= items.length) {
+        if (indexDeleteItem < items.length) {
         items.splice(indexDeleteItem -1, 1);
         alert(`Done`);
         } else alert(`Index not exist`);
