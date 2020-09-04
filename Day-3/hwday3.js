@@ -297,7 +297,7 @@ for (let i = 0; i < arrNum.length; i++) {
 let sequenceOddNum = arrNum.filter(x  => x % 2 !== 0);
 */
 
-if (!sequenceOddNum === 0) {
+if (sequenceOddNum.length !== 0) {
     alert(`${sequenceNum} => ${[...sequenceOddNum]}`);
 } else  alert(`Odd number not exist `);
 
