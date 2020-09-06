@@ -91,19 +91,19 @@ console.log(...a);
 let items = [' Jeans ', ' T-Shirt ', ' Socks ']
 let userOption = prompt('Hi there, welcome to shop admin panel, what do you want (C, R, U, D)?').toUpperCase();
  
-    if (userOption === 'c')  {
+    if (userOption === 'C')  {
         const newItem = prompt('Enter the name of the new item');
         alert(`Done`);
         items.push(newItem);
         
     }
-    else if (userOption === 'r'){
+    else if (userOption === 'R'){
         console.log(`The current items are :`)
         for(let i = 0; i< items.length; i++) {
             console.log(`${i + 1}. ${items[i]}`)
         }
     }
-    else if (userOption === 'u') {
+    else if (userOption === 'U') {
         const indexUpdateItem = Number(prompt('Enter the position you want to update'));
         // kiểm tra vị trí muốn thay đổi 
         if (updateItem < items.length) {
@@ -113,7 +113,7 @@ let userOption = prompt('Hi there, welcome to shop admin panel, what do you want
         } else alert(`Index not exist`);
         
     }
-    else if (userOption === 'd') {
+    else if (userOption === 'D') {
         const indexDeleteItem = Number(prompt('Enter the position you want to delete'));
         // kiểm tra vị trí muốn xóa 
         if (indexDeleteItem < items.length) {
@@ -140,7 +140,7 @@ alert(`The sum of them is ${sum}`);
 const sequenceOfNumbers = prompt('Enter a sequence of number, separate by commas (,)');
 let arrOfNumber = sequenceOfNumbers.split(",");
 let min = Number(arrOfNumber[0]);
-for (let i = 0; i < arrOfNumber.length; i++) {
+for (let i = 0; i < arrOfNumber.length - 1; i++) {
     if ( Number(arrOfNumber[i]) > Number(arrOfNumber[i + 1])) {
         min = arrOfNumber[i + 1];
     }
