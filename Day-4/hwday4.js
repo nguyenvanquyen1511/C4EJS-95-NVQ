@@ -27,11 +27,11 @@
 // const {subject, dueDate, assignTo} = task;
 
 //3.
-const jobSearch = "https://gist.githubusercontent.com/qhuydtvt/6870e14e544455f6de6081a83e365b5b/raw/adb147e19259e3ee9b093cb71228026e2417ab09/jobs.js"
-      
-// dài quá dán link thôi kéo mệt lắm :)))))))) 
- 
-  
+const jobSearch =
+  "https://gist.githubusercontent.com/qhuydtvt/6870e14e544455f6de6081a83e365b5b/raw/adb147e19259e3ee9b093cb71228026e2417ab09/jobs.js";
+
+// dài quá dán link thôi kéo mệt lắm :))))))))
+
 //3.1  Object
 //3.2 Array
 //3.3.	In each hit of hits, how to find the job’s title, locations, salary, benefits, skills and requirements
@@ -223,12 +223,11 @@ console.log(
 let hasSkill;
 for (let i in feDev) {
   let { task, complete } = feDev[i];
-  // if này dành cho phần 6.6 
+  // if này dành cho phần 6.6
   if (complete === true) {
-    hasSkill = 'x';
+    hasSkill = "x";
   } else hasSkill = " ";
   console.log(`${Number(i) + 1}. [${hasSkill}] ${task}`);
-  
 }
 console.log(`=====================================================`);
 // 6.2(3, 4, 5).	Let users add , update, delete , complete task.
@@ -243,10 +242,9 @@ while (true) {
     for (let i in feDev) {
       let { task, complete } = feDev[i];
       if (complete === true) {
-        hasSkill = 'x';
+        hasSkill = "x";
       } else hasSkill = " ";
       console.log(`${Number(i) + 1}. [${hasSkill}] ${task}`);
-      
     }
     console.log(`=====================================================`);
   }
@@ -259,10 +257,9 @@ while (true) {
         for (let i in feDev) {
           let { task, complete } = feDev[i];
           if (complete === true) {
-            hasSkill = 'x';
+            hasSkill = "x";
           } else hasSkill = " ";
           console.log(`${Number(i) + 1}. [${hasSkill}] ${task}`);
-          
         }
         console.log(`=====================================================`);
         break;
@@ -280,10 +277,9 @@ while (true) {
         for (let i in feDev) {
           let { task, complete } = feDev[i];
           if (complete === true) {
-            hasSkill = 'x';
+            hasSkill = "x";
           } else hasSkill = " ";
           console.log(`${Number(i) + 1}. [${hasSkill}] ${task}`);
-          
         }
         console.log(`=====================================================`);
         break;
@@ -300,10 +296,9 @@ while (true) {
         for (let i in feDev) {
           let { task, complete } = feDev[i];
           if (complete === true) {
-            hasSkill = 'x';
+            hasSkill = "x";
           } else hasSkill = " ";
           console.log(`${Number(i) + 1}. [${hasSkill}] ${task}`);
-          
         }
         console.log(`=====================================================`);
         break;
@@ -313,20 +308,18 @@ while (true) {
   } else console.log(`Not found`);
 }
 //7.	Given the object
- // Move the turtle to the provided position, use penup() and pendown() to NOT leave any traces
+// Move the turtle to the provided position, use penup() and pendown() to NOT leave any traces
 
-  const pos = {
-    x: 200,
-    y: 50
-  }
+const pos = {
+  x: 200,
+  y: 50,
+};
 
-  penup();
-  rt(90);
-  fd(pos.x);
-  lt(90);
-  fd(pos.y);
-
-
+penup();
+rt(90);
+fd(pos.x);
+lt(90);
+fd(pos.y);
 
 // 8.	Given the object
 
@@ -338,23 +331,21 @@ const square = {
 
 //Use JS Turtle, to draw a square at position (x, y) with size width
 
-
-  penup();  
+penup();
+rt(90);
+fd(square.x);
+lt(90);
+fd(square.y);
+pendown();
+for (let i = 0; i < 4; i++) {
+  fd(square.width);
   rt(90);
-  fd(square.x);
-  lt(90);
-  fd(square.y);
-  pendown(); 
-  for (let i = 0; i < 4; i++) {
-    fd(square.width);
-    rt(90);
-  }
-
+}
 
 //9.	Given the object
 
 const rect = {
-  x: 100, 
+  x: 100,
   y: 50,
   width: 20,
   height: 40,
@@ -362,150 +353,126 @@ const rect = {
 
 //Use JS Turtle, to draw a rectangle at position (x, y) with size width and height
 
-
-  penup();  
+penup();
+rt(90);
+fd(rect.x);
+lt(90);
+fd(rect.y);
+pendown();
+for (let i = 0; i < 2; i++) {
+  fd(rect.height);
   rt(90);
-  fd(rect.x);
-  lt(90);
-  fd(rect.y);
-  pendown();
-  for (let i = 0; i < 2; i++) {
-    
-    fd(rect.height);
-    rt(90);
-    fd(rect.width);
-    rt(90);
-  }
-
-
+  fd(rect.width);
+  rt(90);
+}
 
 // 10.
 
 const cmds = [
   {
-      shape: 'square',
-      x: 20,
-      y: 40,
-      width: 50,
+    shape: "square",
+    x: 20,
+    y: 40,
+    width: 50,
   },
   {
-      shape: 'rect',
-      x: 8,
-      y: 70,
-      width: 12,
-      height: 40,
+    shape: "rect",
+    x: 8,
+    y: 70,
+    width: 12,
+    height: 40,
   },
   {
-      shape: 'rect',
-      x: 70,
-      y: 70,
-      width: 12,
-      height: 40,
+    shape: "rect",
+    x: 70,
+    y: 70,
+    width: 12,
+    height: 40,
   },
   {
-      shape: 'rect',
-      x: 10,
-      y: 20,
-      width: 70,
-      height: 20,
+    shape: "rect",
+    x: 10,
+    y: 20,
+    width: 70,
+    height: 20,
   },
   {
-      shape: 'square',
-      x: 25,
-      y: 40,
-      width: 14,
+    shape: "square",
+    x: 25,
+    y: 40,
+    width: 14,
   },
   {
-      shape: 'square',
-      x: 33,
-      y: 42,
-      width: 6,
+    shape: "square",
+    x: 33,
+    y: 42,
+    width: 6,
   },
   {
-      shape: 'square',
-      x: 50,
-      y: 40,
-      width: 14,
+    shape: "square",
+    x: 50,
+    y: 40,
+    width: 14,
   },
   {
-      shape: 'square',
-      x: 58,
-      y: 42,
-      width: 6,
+    shape: "square",
+    x: 58,
+    y: 42,
+    width: 6,
   },
   {
-      shape: 'square',
-      x: 40,
-      y: 25,
-      width: 8,
+    shape: "square",
+    x: 40,
+    y: 25,
+    width: 8,
   },
   {
-      shape: 'square',
-      penWidth: 1,
-      x: 500,
-      y: 500,
-      width: 15,
+    shape: "square",
+    penWidth: 1,
+    x: 500,
+    y: 500,
+    width: 15,
   },
 ];
 
 for (let i = 0; i < cmds.length - 1; i++) {
-  let {shape, x, y, width, height, penWidth} = cmds[i];
-  if (shape === 'square') {
-    penup();  
+  let { shape, x, y, width, height, penWidth } = cmds[i];
+  if (shape === "square") {
+    penup();
     rt(90);
     fd(x);
     lt(90);
     fd(y);
-    pendown(); 
+    pendown();
     for (let i = 0; i < 4; i++) {
       fd(width);
       rt(90);
     }
     home();
   } else {
-    penup();  
+    penup();
     rt(90);
     fd(x);
     lt(90);
     fd(y);
     pendown();
     for (let j = 0; i < 2; i++) {
-      
       fd(height);
       rt(90);
       fd(width);
       rt(90);
     }
-    home();    
+    home();
   }
-  penup();  
+  penup();
+  rt(90);
+  fd(x);
+  lt(90);
+  fd(y);
+  pendown();
+  for (let i = 0; i < 4; i++) {
+    penwidth(penWidth);
+    fd(width);
     rt(90);
-    fd(x);
-    lt(90);
-    fd(y);
-    pendown(); 
-    for (let i = 0; i < 4; i++) {
-      penwidth(penWidth);
-      fd(width);
-      rt(90);
-    }
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+}
