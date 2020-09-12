@@ -74,8 +74,8 @@ let devDictionary = {
 //4.2.	Update your script so that it can let users contribute the explanation to the dictionary
 
 const keyword = prompt("Enter a keyword").toLowerCase();
-if (keyword in dictionary) {
-  alert(`${keyword}\n${dictionary[keyword]}`);
+if (keyword in devDictionary) {
+  alert(`${keyword}\n${devDictionary[keyword]}`);
 } else {
   let explanation = prompt(
     `We could not find: ${keyword}, leave your explanation`
@@ -85,9 +85,9 @@ if (keyword in dictionary) {
       `We could not find: ${keyword}, leave your explanation`
     );
   }
-  dictionary[keyword] = explanation;
+  devDictionary[keyword] = explanation;
   alert(`Done`);
-  alert(`${keyword}\n${dictionary[keyword]}`);
+  alert(`${keyword}\n${devDictionary[keyword]}`);
 }
 
 //5.	Initialize a variable named products, containing an array of products, each product has a name, price, brand, category, and color
