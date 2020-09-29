@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        const container = document.getElementById('list');
+        for (let i = 0; i < 3; i++) {
+            container.insertAdjacentHTML('beforeend', `<li> ${i} </li>`)
+        }
+    </script>
+    <!-- => 1. C =>thử với <ol> sẽ rõ hơn -->
+
+    <!-- 2. use setInterval()  -->
+    <script>
+        // log out every 3 seconds
+        var timer = setInterval(function(){console.log("Hello"); }, 3000);
+        // stop 
+        clearInterval(timer);
+         
+    </script>
+
+    <!-- 3. 
+        3.1  Can a variable declared by let, in a function still exists after the function
+finishes running? => No
+        3.2 Can var variable declared by var, in a function still exists after the
+function finishes running? => No -->
+    
+
+    <!--4. You can get DOM (Read) by tag name using getElementsByTagName function, the
+result you get is NOT a single HTMLElement but a HTMLCollection, which can be
+treated as Array (you can use indexing [], for statement and length with it). Refer
+to this link.
+        Use getElementsByTagName function to get ALL of the <li> tag. Print/log out the first
+element (which is <li>Articles</li>) and then use for loop to print ALL of the
+DOM you get from the function.
+     -->
+    <ul>
+        <li>News</li>
+        <li>Article</li>
+        <li>Blog</li>
+    </ul>
+    <script>
+        let item = document.getElementsByTagName('LI');
+        console.log(item[0]);
+        for (let i = 0; i < item.length; i++) {
+            console.log(item[i]);
+        }
+    </script>
+    <!-- 5. You can get DOM (Read) by class name using getElementsByClassName function.
+The result you get, again, is NOT a single HTMLElement by a HTMLCollection. Refer
+to this link.Given the following HTML
+        Use getElementsByTagName function to get ALL of the &lt;div&gt; tag. Print/log out the
+second element (which is &lt;div class=”singer”&gt;Nate Ruess&lt;/div&gt;) and then
+use for loop to print ALL of the DOM you get from the function. -->
+    <div>
+        <div class="singer">James Bay</div>
+        <div class="singer">Nate Ruess</div>
+        <div class="singer">Ed Sheeran</div>
+        <div class="singer">Steve Garrigan</div>
+    </div>
+
+    <script>
+        let allSingers = document.getElementsByClassName("singer");
+        console.log(allSingers[1])
+        console.log("========================")
+        for (let i = 0; i < allSingers.length; i++) {
+            console.log(allSingers[i]);
+        }
+
+    </script>
+
+    <!-- 6. Learn how to remove (Delete) an HTMLElement using HTMLElement.remove()
+function, refer to this -->
+    <div id="div-01">Here is div-01</div>
+    <div id="div-02">Here is div-02</div>
+    <div id="div-03">Here is div-03</div>   
+    <script>
+        let element = document.getElementById("div-02");
+        element.remove();
+    </script>
+    <!-- <div id="div-01">Here is div-01</div>
+         <div id="div-03">Here is div-03</div>  -->
+
+    <!--7.  When using addEventListener, in the callback you can add a parameter / argument
+to get more information about the event, for example:
+        btn.addEventListener(‘click’, (e) =&gt; {
+            // Callback body
+        }); 
+        e is called Event Object, which contains additional information about event.
+        7.1 Catch ‘click’ event from 2 different buttons, id=”button1” and
+    id=”button2”, in the callback body of the 2 events, print, or log out e.target.
+    What is it?-->
+    <button id="button-1">Button-1!</button>
+    <button id="button-2">Button-2!</button>
+    <script>
+        let element1 = document.getElementById('button-1');
+        let element2 = document.getElementById('button-2');
+        element1.addEventListener('click', (e)=> {
+            console.log(e.target);
+        })
+        element2.addEventListener('click', (e)=> {
+            console.log(e.target);
+        })
+            
+        </script>
+    <!-- in ra element nếu click vào button-1 sẽ in ra element với id là button-1, button-2 tương tự  -->
+
+
+    <!--7.2  Catch a ‘keydown’ event from an input, in the callback body of the
+    event, print / log out the e.key. What is it? -->
+    <input type="text" id="input"> 
+    <script>
+        let el = document.getElementById('input');
+        el.addEventListener('keydown', (e) => {
+            console.log(e.key);
+        })
+    </script>
+     <!--in ra các kí tự ta nhập vào -->
+
+
+     <!-- 11. 
+            11.1.	Write an HTML for the UI above, create and link a JS file to it
+            11.2.	Get (Read) the ‘Upper it!!’ button
+            11.3.	Catch event when ‘Upper it!!!!’ button is clicked
+            11.4.	Get (Read) ‘Enter your name’ input
+            11.5.	Get (Read) user name from the input
+            11.6.	Convert user’s name to uppercase
+            11.7.	Get (Read) the ‘Your result will appear here’ tag
+            11.8.	Update the ‘Your result will appear here’ to the username uppercase version
+            
+ -->
+    <br>
+    <input id="input_name" type="text" placeholder="Enter your name"> <span><button id="upper_btn">Upper it!!!!</button></span>
+    <div id="result_div">Your result will appear here</div>
+    <script>
+        let but = document.getElementById("upper_btn");
+        console.log(but);
+        let inp = document.getElementById("input_name");
+        console.log(inp);
+        let result = document.getElementById("result_div");
+        console.log(result);
+           
+        but.addEventListener('click', myFunction => {
+            console.log("Upper it !!!! just clicked")
+            console.log(`User's name: ${inp.value}`)
+            console.log(`User's name uppercase: ${inp.value.toUpperCase()}`)
+            document.getElementById("result_div").innerHTML = inp.value.toUpperCase();
+        })
+    </script>
+
+    <!-- 12 -->
+    <p style="font-weight: bold;font-size: 40px;">Your Belongings</p>
+    <input id="item_input" type="text" placeholder="New Item"> <span><button id="add_btn">Add</button></span>
+    <ul id="item_list_ul">
+        <li>Test item 1</li>
+        <li>Test item 2</li>
+        
+    </ul>
+    <script>
+        
+        const items = ["Backpack", "MiBand watch", "Ring"];
+        const listItem = document.getElementById("item_list_ul");
+        const itemInput = document.getElementById("item_input");
+        const addButton = document.getElementById("add_btn");
+        console.log(items);
+        console.log(listItem);
+
+        const addElementHTML = (arr) => {  
+            
+            for (let i = 0; i < items.length; i++) {
+                listItem.insertAdjacentHTML("beforeend", `<li><span>${items[i]}</span> <button class="remove_btn">remove</button></li>`);
+            }
+        };
+        addElementHTML(items);
+        console.log(itemInput);
+        console.log(addButton);
+
+        addButton.addEventListener("click", () => {
+            console.log("Add button clicked");
+            items.push(itemInput.value);
+            addElementHTML(items)
+            itemInput.value = " ";
+            console.log(items);
+        });
+    </script>
+    
+    
+</body>
+</html>
